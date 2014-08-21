@@ -26,16 +26,16 @@
       <file leaf-file-name="layout.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="85.041664" vertical-offset="2551" max-vertical-offset="3225">
+            <state line="34" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="77.708336" vertical-offset="2375" max-vertical-offset="3225">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index_notconnected.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index_notconnected.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index_notconnected.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="16" selection-start="2556" selection-end="2556" vertical-scroll-proportion="-20.291666" vertical-offset="1358" max-vertical-offset="2685">
+            <state line="108" column="11" selection-start="2298" selection-end="2298" vertical-scroll-proportion="0.3082353" vertical-offset="1358" max-vertical-offset="2685">
               <folding />
             </state>
           </provider>
@@ -71,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="share.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="share.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/share.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="477" column="8" selection-start="10373" selection-end="10373" vertical-scroll-proportion="0.37862596" vertical-offset="6907" max-vertical-offset="26010">
+            <state line="477" column="12" selection-start="0" selection-end="33127" vertical-scroll-proportion="-4.428571" vertical-offset="6907" max-vertical-offset="26010">
               <folding />
             </state>
           </provider>
@@ -172,9 +172,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1364" />
-    <option name="width" value="1924" />
-    <option name="height" value="1082" />
+    <option name="x" value="2376" />
+    <option name="width" value="910" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -382,7 +382,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../heroku/django-bookmark" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../heroku/share-api3-heroku-bubblegum" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -663,19 +663,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1364" y="0" width="1924" height="1082" extended-state="6" />
-    <editor active="true" />
+    <frame x="2376" y="0" width="910" height="1080" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25426438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37819025" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16577825" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23284823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.57881135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -830,7 +830,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="148" column="12" selection-start="4304" selection-end="4304" vertical-scroll-proportion="-29.75" vertical-offset="1506" max-vertical-offset="2415">
           <folding>
-            <element signature="e#2749#2773#0" expanded="true" />
+            <element signature="e#2749#2773#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1006,21 +1006,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="85.041664" vertical-offset="2551" max-vertical-offset="3225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index_notconnected.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="16" selection-start="2556" selection-end="2556" vertical-scroll-proportion="-20.291666" vertical-offset="1358" max-vertical-offset="2685">
+        <state line="34" column="0" selection-start="855" selection-end="855" vertical-scroll-proportion="77.708336" vertical-offset="2375" max-vertical-offset="3225">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/share.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="477" column="8" selection-start="10373" selection-end="10373" vertical-scroll-proportion="0.37862596" vertical-offset="6907" max-vertical-offset="26010">
+        <state line="477" column="12" selection-start="0" selection-end="33127" vertical-scroll-proportion="-4.428571" vertical-offset="6907" max-vertical-offset="26010">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index_notconnected.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="11" selection-start="2298" selection-end="2298" vertical-scroll-proportion="0.3082353" vertical-offset="1358" max-vertical-offset="2685">
           <folding />
         </state>
       </provider>
