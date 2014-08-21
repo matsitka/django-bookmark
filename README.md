@@ -1,31 +1,36 @@
-Demo
+#A fun web bookmark app to help you save and collect things on the web.
 
-http://booksitka-bubblegum.herokuapp.com/
-http://booksitka-darkforest.herokuapp.com/login/
+##Django App
 
-Installation
+##Demo
 
-pip install -r requirements.txt
+* http://booksitka-bubblegum.herokuapp.com/
+* http://booksitka-darkforest.herokuapp.com/
 
-python manage.py syncdb
+##Installation
 
-python manage.py runserver
+`pip install -r requirements.txt`
 
-Requirements
+`python manage.py syncdb`
 
-Django==1.6.5
-Pillow==2.5.1
-South==1.0
-argparse==1.2.1
-beautifulsoup4==4.3.2
-django-autocomplete-light==1.4.14
-django-taggit==0.12
-djangorestframework==2.3.14
-lxml==3.3.5
-requests==2.3.0
-wsgiref==0.1.2
+`python manage.py runserver`
 
-Questions/Feedbacks
+##Requirements
 
-hi@matsitka.com
-http://matsitka.com
+* Django==1.6.5
+* Pillow==2.5.1
+* South==1.0 (optional)
+* argparse==1.2.1
+* beautifulsoup4==4.3.2
+* django-autocomplete-light==1.4.14
+* django-taggit==0.12
+* djangorestframework==2.3.14
+* lxml==3.3.5
+* requests==2.3.0
+* wsgiref==0.1.2
+
+##Questions/Feedbacks
+
+* hi@matsitka.com
+* https//twitter.com/matsitka
+* http://matsitka.com
