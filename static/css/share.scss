@@ -303,6 +303,9 @@ html, body {
     line-height: 1;
     position: relative;
     cursor: default;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    overflow-x:hidden;
 }
 
 a {
@@ -473,7 +476,7 @@ nav li a:hover{
 .statsbox{
   position:absolute;
   top:100px;
-  margin-left: 30%;
+  margin-left: 31%;
   z-index:20;
   pointer-events:none;
 }
