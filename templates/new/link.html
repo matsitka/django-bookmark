@@ -1,0 +1,156 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block share %}
+
+
+
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>-->
+
+    {% include 'autocomplete_light/static.html' %}
+
+
+
+
+
+<div id="sitka" class="timeline">
+    <div class="row">
+        <div class="columns">
+
+           <div class="timeline">
+				<ul class="cbp_tmtimeline">
+
+
+                            <li class="animated fadeIn">
+
+                             <time class="cbp_tmtime" datetime="{% now "D, d M y" %} {% now "f A" %}"><span>{% now "D, d M y" %}</span> <span>{% now "f A" %}</span></time>
+
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+
+                               <noscript>
+                                sup wargin
+                              </noscript>
+
+
+                                <h2>Save a Link</h2>
+
+
+
+
+                                <div class="beautif">
+                                    <form id="post_form" class="sharepost" method="post" action="{% url "new-link" %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+
+
+
+                                 <!--   {{ link_form.as_p }}
+  	                                progress:-->
+
+                                         {% for hidden in link_form.hidden_fields %}
+                                        {{ hidden }}
+                                    {% endfor %}
+
+                                    {% for field in link_form.visible_fields %}
+
+                                        {{ field.errors }}
+                                        {{ label_tag }}
+                                        {{ label }}
+                                        {{ field }}
+
+                                    {% endfor %}
+
+                                    <i class="icon-label icon-tag"></i>
+
+
+                                </div>
+
+
+
+
+
+
+                            <div class="friends">
+                                <ul class="sml">
+                                   <li><img src="{% static "img/friend.gif" %}"></li>
+                                   <li><img src="{% static "img/friend.gif" %}"></li>
+                                   <li><img src="{% static "img/friend.gif" %}"></li>
+                                   <li><a href="#" class="btn plus sml"><i class="icon-plus"></i></a></li>
+                                 </ul>
+
+                                 <ul class="sml right">
+                                       <li class="p-r-0"><input type="submit" class="btn" name="submit" value="Save" style="margin-top:-6px;"></li>
+
+                                 </ul>
+
+
+
+                            </div>
+
+                                    </form>
+
+						</div>
+					</li>
+
+
+
+
+
+
+				</ul>
+               
+              
+
+
+			</div>
+
+
+                {% include "include/sidebar.html" %}
+
+        </div>
+    </div>
+</div>
+
+    <script>
+        $(document).ready(function(){
+            $('input[name=url]').focus();
+
+           // $('textarea[name=comment]').click(function(e){
+           //     e.preventDefault();
+           //     $('textarea[name=comment]').val('');
+          //  })
+
+            var standard_message = $('textarea[name=comment]').val();
+            $('textarea[name=comment]').focus(
+                function() {
+                    if ($(this).val() == standard_message)
+                        $(this).val("");
+                }
+            );
+            $('textarea[name=comment]').blur(
+                function() {
+                    if ($(this).val() == "")
+                        $(this).val(standard_message);
+                }
+            );
+
+            $('input[name=taggit]').addClass('p-l-36');
+
+           // function blockAdblockUser() {
+           //     if ($('.sharepost').filter(':visible').length == 0) {
+           //         $('.sharepost').addClass('visible');
+
+          //      } else if ($('.sharepost').filter(':hidden').length > 0) {
+                    // Maybe a different error if only some are hidden?
+           //         $('.sharepost').addClass('visible');
+           //     }
+          //  }
+
+        })
+    </script>
+
+
+
+{% endblock %}

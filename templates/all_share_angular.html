@@ -1,0 +1,105 @@
+{% extends 'layout.html' %}
+
+{% block share %}
+
+
+
+
+
+<div id="sitka" class="timeline">
+    <div class="row">
+        <div class="columns">
+
+           <div class="timeline">
+				<ul class="cbp_tmtimeline">
+
+
+                   <!-- <input type="text" ng-model="searchText"> -->
+                    <!-- https://egghead.io/lessons/angularjs-ngrepeat-and-filtering-data -->
+                    <!-- http://angular-ui.github.io/bootstrap/#/typeahead -->
+
+
+
+
+
+
+
+                  <li ng-repeat="post in posts | orderBy:'-created_at'" class="animated fadeIn">
+                            <a href="/{[{ post.random }]}">
+                               <time class="cbp_tmtime" datetime="{[{ post.created_at| date : 'EEE, d MMM yy' }]} {[{ post.created_at| date : 'h:mm a' }]}">
+                                   <span>{[{ post.created_at| date : 'EEE, d MMM yy' }]}</span> <span>{[{ post.created_at| date : 'h:mm a' }]}</span></time>
+                            </a>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+                            <p class="message">{[{ post.comment }]}</p>
+
+
+
+                                 <div ng-repeat="item in links[post.id] | filter:searchText ">
+
+                                          <h2><a href="{[{ item.link }]}">{[{ item.title }]}</a></h2>
+
+
+							               <p class="link"><a href="{[{ item.link }]}">{[{ item.link }]}</a></p>
+
+                               </div>
+
+
+
+                            <!-- <div>
+                               <div>
+
+                                          <h2><a href="{[{ post.link }]}">{[{ post.title }]}</a></h2>
+
+
+							               <p class="link"><a href="{[{ post.link }]}">{[{ post.link }]}</a></p>
+
+                               </div>
+                            </div>
+
+
+
+                          <p>
+                                tags:   <span  ng-repeat="item in tags[post.id]">
+                                         #{[{ item.tag }]},
+                                      </span>
+                            </p>-->
+
+
+
+
+                            <div class="friends">
+                                <ul class="sml">
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><a href="#" class="btn plus sml"><i class="icon-plus"></i></a></li>
+                                 </ul>
+
+                                 <ul class="sml right">
+                                       <li class="p-r-0"><a href="#" class="btn nmb star"><i class="icon-star"></i></a></li>
+                                       <li class="p-r-0"><a href="#" class="btn nmb">3</a></li>
+                                 </ul>
+                            </div>
+
+						</div>
+					</li>
+
+
+
+
+				</ul>
+
+
+
+
+			</div>
+
+
+                {% include "include/sidebar.html" %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,178 @@
+{% extends 'layout.html' %}
+
+{% block share %}
+
+<div id="sitka" class="timeline">
+    <div class="row">
+        <div class="columns">
+
+           <div class="timeline">
+               <!--<p> You are connected as {{ user.email }}</p>-->
+
+
+                {% if not share_list %}
+
+                    <ul class="cbp_tmtimeline">
+
+
+                            <li class="animated fadeIn">
+
+                             <time class="cbp_tmtime" datetime="{% now "D, d M y" %} {% now "f A" %}"><span>{% now "D, d M y" %}</span> <span>{% now "f A" %}</span></time>
+
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+
+
+                                <h1>Welcome to Booksitka, {{ user.name }}!</h1>
+                                <p class="m-b-10">Your list is empty, try adding some <a href="{% url "new-text" %}">text</a>, <a href="{% url "new-link" %}">link</a> or <a href="{% url "new-photo" %}">photo</a>:</p>
+
+                              <ul class="new p-l-0">
+                                <a href="{% url "new-text" %}" class="btn plus" title="Save Text"><i class="icon-plus"></i> <i class="icon-pen"></i></a>
+
+                                <a href="{% url "new-link" %}" class="btn plus" title="Save Link"><i class="icon-plus"></i> <i class="icon-link"></i></a>
+                                <a href="{% url "new-photo" %}" class="btn plus" title="Save Photo"><i class="icon-plus"></i> <i class="icon-camera" ></i></a>
+
+                            </ul>
+
+
+
+
+                                </div>
+
+
+					</li>
+
+
+
+
+
+
+				</ul>
+
+
+
+                {% endif %}
+
+				<ul class="cbp_tmtimeline">
+
+
+
+
+
+
+                    {% for item in share_list %}
+
+
+
+                            <li class="animated fadeIn">
+                            <a href="/{{ item.random }}">
+                               <time class="cbp_tmtime" datetime="{{ item.created_at|date:"d-M-y" }} {{ item.created_at|date:"f" }}"><span>{{ item.created_at|date:"D, d M y"  }}</span> <span>{{ item.created_at|date:"f A" }}</span></time>
+                            </a>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+
+                                   {% if item.text %}
+                                     <p class="message"><i class="icon-message"></i> {{ item.text.comment }}</p>
+
+                                     <p>{% for tag in item.text.taggit.all %}
+                                        #<a class="tag" href="/tag/{{ tag.slug }}">{{ tag }}</a>,
+                                      {% endfor %}
+                                    </p>
+
+                               {% elif item.link %}
+                                     <p class="message"><i class="icon-message"></i> {{ item.link.comment }}</p>
+
+
+                                    <div class="row">
+                                      <div class="link-image">
+
+
+
+
+                                          {% if item.link.youtube != "none"  %}
+                                            <span class="socicon link-image-social">r</span>
+
+                                           {% elif item.link.vine != "none"  %}
+                                            <span class="socicon link-image-social">u</span>
+
+                                           {% elif item.link.vimeo != "none"  %}
+                                            <span class="socicon link-image-social">s</span>
+
+                                         {% elif item.link.instagram != "none"  %}
+                                            <span class="socicon link-image-social">x</span>
+                                          {% endif %}
+
+
+
+
+                                        <p><a href="/{{ item.random }}"><img src="{{ item.link.new_linkthumb.url }}"></a></p>
+                                    </div>
+
+                                    <div class="link-content">
+                                        {% if item.link.title %}
+                                        <h2 class="small"><a href="/{{ item.random }}">{{ item.link.title }}</a></h2>
+                                    {% endif %}
+                                    <p class="link"><a href="{{ item.link.link }}" title="{{ item.link.link }}">{{ item.link.link | truncatechars:50 }}</a></p>
+                                    </div>
+                                    </div>
+
+
+                                    <p>{% for tag in item.link.taggit.all %}
+                                        #<a class="tag" href="/tag/{{ tag.slug }}">{{ tag }}</a>,
+                                      {% endfor %}
+                                    </p>
+
+                                {% elif item.photo %}
+                                     <p class="message"><i class="icon-message"></i> {{ item.photo.comment }}</p>
+
+                                    <h2 class="photo"><a href="{{ item.photo.image_original.url }}"><img src="{{ item.photo.image_crop.url }}"></a></h2>
+
+                                    <p>{% for tag in item.photo.taggit.all %}
+                                        #<a class="tag" href="/tag/{{ tag.slug }}">{{ tag }}</a>,
+                                      {% endfor %}
+                                    </p>
+
+                                {% endif %}
+
+
+
+
+                            <div class="friends">
+                                <ul class="sml">
+                                   <li class="hide-for-small"><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><a href="#" class="btn plus sml"><i class="icon-plus"></i></a></li>
+                                 </ul>
+
+                                 <ul class="sml right">
+                                       <li class="p-r-0"><a href="#" class="btn nmb star"><i class="icon-star"></i></a></li>
+                                       <li class="p-r-0"><a href="#" class="btn nmb">3</a></li>
+                                 </ul>
+                            </div>
+
+						</div>
+					</li>
+
+                 {% endfor %}
+
+
+
+
+				</ul>
+               
+              
+
+
+			</div>
+
+
+                {% include "include/sidebar.html" %}
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

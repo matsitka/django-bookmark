@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+
+{% block share %}
+
+
+
+
+    {% include 'autocomplete_light/static.html' %}
+
+<div id="sitka" class="timeline">
+    <div class="row">
+        <div class="columns">
+
+           <div class="timeline">
+				<ul class="cbp_tmtimeline">
+
+
+                            <li class="animated fadeIn">
+
+                             <time class="cbp_tmtime" datetime="{% now "D, d M y" %} {% now "f A" %}"><span>{% now "D, d M y" %}</span> <span>{% now "f A" %}</span></time>
+
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+
+
+                                <h2>Save a Post</h2>
+
+                                <form id="post_form" class="sharepost" method="post" action="{% url "new-text" %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+
+
+
+                                    <div class="beautif">
+                                    <form id="post_form" class="sharepost" method="post" action="{% url "new-link" %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+
+
+
+                                    {% for hidden in text_form.hidden_fields %}
+                                        {{ hidden }}
+                                    {% endfor %}
+
+                                    {% for field in text_form.visible_fields %}
+
+                                        {{ field.errors }}
+                                        {{ label_tag }}
+                                        {{ label }}
+                                        {{ field }}
+
+                                    {% endfor %}
+
+                                     <i class="icon-label icon-tag text"></i>
+
+
+                                </div>
+
+
+
+
+                            <div class="friends">
+                                <ul class="sml">
+                                  <li><img src="{% static "img/friend.gif" %}"></li>
+                                   <li><img src="{% static "img/friend.gif" %}"></li>
+                                   <li><img src="{% static "img/friend.gif" %}"></li>
+
+                                   <li><a href="#" class="btn plus sml"><i class="icon-plus"></i></a></li>
+                                 </ul>
+
+                                 <ul class="sml right">
+                                       <li class="p-r-0"><input type="submit" class="btn post" name="submit" value="Save" style="margin-top:-6px;"></li>
+
+                                 </ul>
+                            </div>
+                             </form>
+						</div>
+					</li>
+
+
+
+
+
+
+				</ul>
+               
+              
+
+
+			</div>
+
+
+                {% include "include/sidebar.html" %}
+
+        </div>
+    </div>
+</div>
+
+
+     <script>
+        $(document).ready(function(){
+           // $('input[name=url]').focus();
+
+
+
+            var standard_message = $('textarea[name=comment]').val();
+            $('textarea[name=comment]').focus(
+                function() {
+                    if ($(this).val() == standard_message)
+                        $(this).val("");
+                }
+            );
+            $('textarea[name=comment]').blur(
+                function() {
+                    if ($(this).val() == "")
+                        $(this).val(standard_message);
+                }
+            );
+            $('input[name=taggit]').addClass('p-l-36');
+        })
+    </script>
+
+
+
+{% endblock %}

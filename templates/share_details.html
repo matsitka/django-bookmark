@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+
+{% block share %}
+
+<div id="sitka" class="timeline">
+    <div class="row">
+        <div class="columns">
+
+           <div class="timeline">
+				<ul class="cbp_tmtimeline">
+					<li class="animated fadeIn">
+						<a href="/{{ share_details.random }}">
+                            <time class="cbp_tmtime" datetime="{{ share_details.created_at|date:"d-M-y" }} {{ share_details.created_at|date:"f" }}"><span>{{ share_details.created_at|date:"D, d M y"  }}</span> <span>{{ share_details.created_at|date:"f A" }}</span></time>
+						</a>
+						<div class="cbp_tmicon cbp_tmicon-phone"></div>
+						<div class="cbp_tmlabel">
+
+
+                                {% if share_details.text %}
+                                     <p class="message"><i class="icon-message"></i> {{ share_details.text.comment }}</p>
+
+                                     <p>{% for item in share_details.text.taggit.all %}
+                                        #<a class="tag" href="/tag/{{ item.slug }}">{{ item }}</a>,
+                                      {% endfor %}
+                                    </p>
+
+                                {% elif share_details.link %}
+
+
+
+
+                                     <p class="message"><i class="icon-message"></i> {{ share_details.link.comment }}</p>
+
+
+                                      {% with share_details.link.url as link %}
+
+
+                                          {% if share_details.link.youtube != "none"  %}
+
+                                            {% include "embed/youtube.html" %}
+
+
+                                          {% elif share_details.link.vine != "none"  %}
+
+
+                                            {% include "embed/vine.html" %}
+                                             {{ share_details.link.vine|slice:"2:13" }}
+                                          {% elif share_details.link.instagram != "none"  %}
+
+                                            {{ share_details.link.instagram|slice:"2:12" }}
+                                            {% include "embed/instagram.html" %}
+
+                                          {% elif share_details.link.vimeo == share_details.link.vimeo|floatformat  %}
+
+                                            {{ share_details.link.vimeo|slice:"-9:" }}
+                                            {% include "embed/vimeo.html" %}
+
+
+
+
+
+
+                                        {% else %}
+                                        <p>
+                                            <a href="{{ share_details.link.url }}">
+                                            <img src="{{ share_details.link.new_linkimage.url }}" style="padding:5px 0 0 0">
+                                            </a>
+                                        </p>
+
+
+
+
+                                        {% endif %}
+
+                                      {% endwith %}
+
+
+                                        {% if share_details.link.title %}
+                                        <h2><a href="{{ share_details.link.url }}">{{ share_details.link.title }}</a></h2>
+                                    {% endif %}
+                                    <p class="link"><a href="{{ share_details.link.url }}" title="{{ share_details.link.url }}">{{ share_details.link.url | truncatechars:70 }}</a></p>
+
+
+
+
+
+                                    <p>{% for item in share_details.link.taggit.all %}
+                                        #<a class="tag" href="/tag/{{ item.slug }}">{{ item }}</a>,
+                                      {% endfor %}
+                                    </p>
+
+                                 {% elif share_details.photo %}
+                                     <p class="message"><i class="icon-message"></i> {{ share_details.photo.comment }}</p>
+
+                                    <h2 class="photo"><a href="{{ share_details.photo.image_original.url }}"><img src="{{ share_details.photo.image_crop.url }}"></a></h2>
+
+                                    <p>{% for item in share_details.photo.taggit.all %}
+                                        #<a class="tag" href="/tag/{{ item.slug }}">{{ item }}</a>,
+                                      {% endfor %}
+                                    </p>
+
+                                {% endif %}
+
+
+
+                            <div class="friends">
+                                <ul class="sml">
+                                   <li class="hide-for-small"><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><a href="#" class="btn plus sml"><i class="icon-plus"></i></a></li>
+                                 </ul>
+
+                                 <ul class="sml right">
+                                       <li class="p-r-0"><a href="#" class="btn nmb star"><i class="icon-star"></i></a></li>
+                                       <li class="p-r-0"><a href="#" class="btn nmb">3</a></li>
+                                 </ul>
+                            </div>
+
+						</div>
+					</li>
+
+
+
+
+
+
+
+
+
+
+				</ul>
+
+
+              
+
+
+			</div>
+
+
+               {% include "include/sidebar.html" %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

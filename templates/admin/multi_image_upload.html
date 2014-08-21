@@ -1,0 +1,37 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+{% block content %}
+<div id="content-main">
+
+    <!-- opts is set in the context in multi_image_upload_view() -->
+    <form action="" method="post" id="{{ opts.module_name }}_form" class="form-horizontal">
+
+    {% csrf_token %}
+
+    <div>
+      {{ form }}
+
+      <!-- The elements that handle the drag and drop: -->
+      <div id="dropzone" class="dropzone" style="visibility: hidden;">
+        <p class="instructions">Drop Images Here</p>
+      </div>
+
+      <!-- As each image is loaded, the file name will appear here: -->
+      <div class="loaded_images">
+        <ul class="images_list" id="images_list"></ul>
+      </div>
+
+      <!-- The submit button is disabled until there is at least one image loaded: -->
+      <div class="actions">
+        <input id="id_submit" type="submit" class="btn btn-success" disabled>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+<link href="{% static "css/multi_image_upload.css" %}" rel="stylesheet" type="text/css">
+<script src="{% static "js/multi_image_upload.js" %}"></script>
+
+{% endblock %}

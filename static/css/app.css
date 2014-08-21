@@ -1,0 +1,412 @@
+/* 2014 MIT License by Mat Sitka  */
+/* Created by Mat Caissy | https://twitter.com/matsitka */
+/* http://matsitka.com */
+
+/* header */
+.profile {
+    padding: 15px 0 15px 0;
+    background: rgba(139, 119, 187, 0.12);
+    width: 100%;
+    float: left;
+}
+
+.profile.friends {
+    padding: 15px 0 12px 0;
+}
+
+.profile .logo{
+    float: left;
+    margin-left: 12px;
+}
+
+.profile .width {
+    width: 50%;
+    margin: auto;
+}
+
+.profile .width .left{
+    width:350px;
+    float:left;
+}
+
+.profile .width .right{
+    width:100px;
+    float:right;
+    text-align: right;
+}
+
+.profile .user{
+    max-width:48px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.profile ul,
+.friends ul{
+    margin:0;
+    padding:0;
+}
+
+.profile li,
+.friends li{
+    display:inline-block;
+    padding-right:8px;
+    float:left;
+}
+
+.profile li:nth-child(1n+7),
+.friends li:nth-child(1n+7) {
+    padding-top:6px;
+}
+
+
+.profile li img,
+.friends li img{
+    max-width:48px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.friends ul.sml li img{
+    max-width:36px;
+
+}
+
+/* fin header */
+
+#sitka {
+    background: #464368;
+    color:white;
+    padding:30px 0 30px 0;
+    width:100%;
+    float:left;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+}
+
+
+#sitka .share {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#sitka .share textarea{
+    height:140px;
+    width:100%;
+    color:white;
+    padding:14px;
+    line-height: 18px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background:#9995BE;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    position:relative;
+}
+
+#sitka .share .drop {
+    position: relative;
+    width: 100%;
+    padding: 35px;
+    border-top:1px dashed white;
+    background:#9995BE;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    top:-3px;
+}
+
+#sitka .share textarea:focus{
+
+}
+
+.width.credits{
+    width: 50%;
+    margin: auto;
+    padding-top:100px;
+    text-align: center;
+}
+
+/* share page */
+
+#sitka .share .message {
+    position: relative;
+    width: 100%;
+    padding: 25px;
+    background:#9995BE;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1) inset;
+    text-align: left;
+}
+
+#sitka .share .message p{
+    margin-top:0;
+}
+
+#sitka .share .message p a{
+    color:#a6fa62;
+}
+
+
+/* fin share page */
+
+
+/* timeline */
+
+#sitka .timeline {
+    width:70%;
+    margin:auto;
+}
+
+#sitka.timeline {
+    padding:0;
+    padding-bottom: 12px;
+}
+
+
+.cbp_tmtimeline {
+	margin: 30px 0 0 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+}
+
+.cbp_tmtimeline > li {
+	position: relative;
+    margin-bottom: 30px;
+}
+
+.cbp_tmtimeline > li:last-child {
+    margin-bottom: 0;
+}
+
+/* The line */
+.cbp_tmtimeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #9995BE;
+    left: 146px;
+    margin-left: -10px;
+}
+
+/* The date/time */
+.cbp_tmtimeline > li .cbp_tmtime {
+	display: block;
+	width: 215px;
+	padding-right: 100px;
+	position: absolute;
+
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span {
+	display: block;
+	text-align: right;
+    padding-top:10px;
+    font-size: 1.5em;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:first-child {
+	font-size: 0.9em;
+	color: #bdd0db;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+	color: #a6fa62;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+	color: #a6fa62;
+}
+
+/* Right content */
+.cbp_tmtimeline > li .cbp_tmlabel {
+	margin: 0 0 15px 21%;
+	background: #9995BE;
+	color: #fff;
+	padding: 20px;
+	font-size: 1.2em;
+	font-weight: 300;
+	line-height: 1.4;
+	position: relative;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel p {
+	margin: 0;
+
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel .friends {
+    height:75px;
+    position: relative;
+    background: rgba(27, 27, 36, 0.82);
+    margin: -20px;
+    padding: 20px;
+    margin-top: 14px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+	background: #797598;
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel h2 {
+	margin-top: 0px;
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+    margin-bottom: 5px;
+}
+
+/* The triangle */
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-right-color: #9995BE;
+    border-width: 6px;
+    top: 13px;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+	border-right-color: #797598;
+}
+
+/* The icons */
+.cbp_tmtimeline > li .cbp_tmicon {
+    width: 10px;
+    height: 10px;
+    font-family: 'ecoico';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.4em;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    color: #fff;
+    background: #797598;
+    border-radius: 52%;
+    box-shadow: 0 0 0 4px #9995BE;
+    text-align: center;
+    left: 158px;
+    top: 14px;
+    margin: 0 0 0 -25px;
+}
+
+
+/* fin timeline */
+
+/* button */
+
+.btn {
+    display: inline-block;
+    font-family: 'Helvetica', Arial, sans-serif;
+    width: auto;
+    white-space: nowrap;
+    height: 48px;
+    padding: 0 22px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 48px;
+    cursor: pointer;
+    border: 0;
+    -moz-border-radius: px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    vertical-align: top;
+    background: #a6fa62;
+    color:#1b1b24;
+}
+
+.btn.purple{
+    background: #9995BE;
+    color:white;
+}
+
+.btn.orange{
+    background: #EEFA62;
+}
+
+.btn.plus {
+    background: #1b1b24;
+    color:#9995BE;
+    border:1px dashed #9995BE;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    width:48px;
+    padding:0;
+}
+
+.btn.sml {
+    width:36px;
+    height:36px;
+    line-height: 36px;
+}
+
+.btn.nmb {
+    width:36px;
+    height:36px;
+    line-height: 36px;
+    padding:0;
+}
+
+/* fin button */
+
+.center{text-align: center}
+.right{float:right!important;}
+
+.p-r-0{padding-right:0!important;}
+
+
+/* media q */
+
+@media only screen and (max-width: 40em) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+   .width {
+        width: 100%!important;
+    }
+
+
+}
+
+/* fin media q */

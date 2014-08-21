@@ -1,0 +1,36 @@
+{% load tags_extra %}
+
+<div class="sidebar">
+
+   <ul class="new hash">
+    <a href="{% url "new-text" %}" class="btn plus" title="Save Text"><i class="icon-plus"></i> <i class="icon-pen"></i></a>
+
+    <a href="{% url "new-link" %}" class="btn plus" title="Save Link"><i class="icon-plus"></i> <i class="icon-link"></i></a>
+    <a href="{% url "new-photo" %}" class="btn plus" title="Save Photo"><i class="icon-plus"></i> <i class="icon-camera" ></i></a>
+
+    </ul>
+
+<ul class="hash">
+    <li><i class="icon-star"></i> Your highlights (TODO)</li>
+    <li><a href="#">View star<span>1</span></a></li>
+</ul>
+
+  <ul class="hash">
+    <li><i class="icon-share"></i> Your bookmarks</li>
+    <li><a href="{% url "home_list" %}">See all my bookmarks django<span>1</span></a></li>
+      <li><a href="{% url "all_share_angular" %}">See all my bookmarks angular<span>1</span></a></li>
+
+</ul>
+
+<ul class="hash">
+    <li><i class="icon-label"></i> Your tags <br></li>
+
+    {% show_tags %}
+
+
+</ul>
+
+
+
+
+</div>

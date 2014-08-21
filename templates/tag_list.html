@@ -1,0 +1,136 @@
+{% extends 'layout.html' %}
+
+{% block share %}
+
+<div id="sitka" class="timeline">
+    <div class="row">
+        <div class="columns">
+
+           <div class="timeline">
+
+
+                        {% if not tag_list %}
+                         <p>You don't have any tags #<a href="{{ request.path }}">{{ request.path |slice:"5:" | slice:"" }}</a>, yet.</p>
+
+                        {% endif %}
+
+
+				<ul class="cbp_tmtimeline">
+
+
+
+                        {% for item in tag_list %}
+
+
+
+                            <li class="animated fadeIn">
+                            <a href="/{{ item.random }}">
+                               <time class="cbp_tmtime" datetime="{{ item.created_at|date:"d-M-y" }} {{ item.created_at|date:"f" }}"><span>{{ item.created_at|date:"D, d M y"  }}</span> <span>{{ item.created_at|date:"f A" }}</span></time>
+                            </a>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+
+                            {% if item.text %}
+                            <p class="message">{{ item.text.comment }}</p>
+
+                            {% elif item.link %}
+                                     <p class="message">{{ item.link.comment }}</p>
+
+
+                                    <div class="row">
+                                      <div class="link-image">
+
+
+                                           {% if item.link.youtube != "none"  %}
+                                            <span class="socicon link-image-social">r</span>
+
+                                           {% elif item.link.vine != "none"  %}
+                                            <span class="socicon link-image-social">u</span>
+
+                                           {% elif item.link.vimeo != "none"  %}
+                                            <span class="socicon link-image-social">s</span>
+
+                                         {% elif item.link.instagram != "none"  %}
+                                            <span class="socicon link-image-social">x</span>
+                                          {% endif %}
+
+                                        <p><a href="/{{ item.random }}"><img src="{{ item.link.new_linkthumb.url }}"></a></p>
+                                    </div>
+
+                                    <div class="link-content">
+                                        {% if item.link.title %}
+                                        <h2 class="small"><a href="/{{ item.random }}">{{ item.link.title }}</a></h2>
+                                    {% endif %}
+                                    <p class="link"><a href="{{ item.link.link }}" title="{{ item.link.link }}">{{ item.link.link | truncatechars:50 }}</a></p>
+                                    </div>
+                                    </div>
+
+
+
+                             {% elif item.photo %}
+                                     <p class="message">{{ item.photo.comment }}</p>
+
+                                    <h2 class="photo"><img src="{{ item.photo.image.url }}"></h2>
+
+                                {% endif %}
+
+
+
+
+
+                            {% if item.taggit.all %}
+                                    <p>
+
+                                        {% for key in item.taggit.all %}
+
+                                            #<a href="/tag/{{ key }}">{{ key }}</a>,
+
+                                        {% endfor %}
+
+
+
+                                    </p>
+
+                             {% endif %}
+
+
+
+                            <div class="friends">
+                                <ul class="sml">
+                                   <li class="hide-for-small"><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><img src="http://www.placehold.it/48x48/9995BE/ffffff"></li>
+                                   <li><a href="#" class="btn plus sml"><i class="icon-plus"></i></a></li>
+                                 </ul>
+
+                                 <ul class="sml right">
+                                       <li class="p-r-0"><a href="#" class="btn nmb star"><i class="icon-star"></i></a></li>
+                                       <li class="p-r-0"><a href="#" class="btn nmb">3</a></li>
+                                 </ul>
+                            </div>
+
+						</div>
+					</li>
+
+                        {% endfor %}
+
+
+
+
+
+
+				</ul>
+               
+              
+
+
+			</div>
+
+
+                {% include "include/sidebar.html" %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

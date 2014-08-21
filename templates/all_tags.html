@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block share %}
+
+<div id="sitka" class="timeline">
+    <div class="row">
+        <div class="columns">
+
+             <div class="timeline tags">
+
+
+
+                 <ul class="hash">
+
+                 <li><i class="icon-label"></i> All your project tags <br></li>
+
+                    {% for item in all_tags %}
+                         <li><a href="/tag/{{ item.slug }}">#{{ item }}
+
+
+
+                             <span>{{ item.tag_count }}</span></a></li>
+                    {% endfor %}
+
+                 </ul>
+
+             </div>
+
+
+                {% include "include/sidebar.html" %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,210 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bookmark Project — Booksitka</title>
+
+
+
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}" />
+    <link rel="stylesheet" href="{% static "css/components.css" %}"/>
+
+    <link rel="stylesheet" href="{% static "css/mfglabs_iconset.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/socicon.css" %}"/>
+
+
+
+
+
+    <link rel="stylesheet" href="{% static "css/share.css" %}"/>
+
+     <link rel="stylesheet" href="{% static "css/lib/responsive-nav.css" %}">
+
+     <link rel="stylesheet" href="{% static "css/animate.css" %}">
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+
+
+
+
+  </head>
+
+<body ng-app="share.app.resource" ng-controller="AppController">
+
+<div class="profile menu">
+
+    <div class="row">
+        <div class="columns">
+
+            <div class="logo">
+                <a href="{% url "home_list" %}" title="Return Home"><img class="user" src="{% static "img/logo.gif" %}"> </a>
+                </div>
+
+            {% if user %}
+             <div class="search mobile">
+                <input type="text" class="txt" placeholder="Search your shares" ng-model="searchText">
+                <button type="submit" class="search-id button"><i class="icon-magnifying"></i></button>
+            </div>
+            {% endif %}
+
+            <nav class="nav-collapse menu">
+
+            <div class="menuleft">
+
+
+                 {% if not user %}
+
+
+
+                        <ul class="left">
+                        <li><a href="#"><i class="icon-heart"></i><br>Discover</a></li>
+                        <li><a href="#"><i class="icon-check_circle"></i><br>FAQ</a></li>
+                         <li><a href="#"><i class="icon-star"></i><br>Blog</a></li>
+                         <li><a href="#"><i class="icon-twitter_circle"></i><br>Twitter</a></li>
+                        </ul>
+
+                 {% elif user %}
+
+                      <div class="search">
+                            <input type="text" class="txt" placeholder="Search your shares" ng-model="searchText">
+                            <button type="submit" class="search-id button"><i class="icon-magnifying"></i></button>
+                        </div>
+                {% endif %}
+
+            </div>
+
+
+            <div class="menuright">
+
+                {% if user %}
+                    <ul class="right">
+
+                    <li class="right p-r-0"><a  class="btn" href="{% url "sign_out" %}">Sign out</a></li>
+                    <li class="right"><a class="btn purple  m-r-10" href="#">{{ user.name }}</a></li>
+                    </ul>
+
+                   {% else %}
+                        <ul class="right">
+
+                     <li class="right p-r-0"><a class="btn" href="{% url "register" %}">Register</a></li>
+                     <li class="right"><a class="btn purple m-r-10" href="{% url "sign_in" %}">Login</a></li>
+                      </ul>
+                   {% endif %}
+
+
+            </div>
+
+
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+ </div>
+
+{% block share %}{% endblock %}
+
+<div class="row">
+    <div class="columns">
+
+
+
+
+         <div class="width credits">
+
+             <p><i class="icon-settings"></i><br>{{ "A smarter way to collect + save on the web." |title }}<br>Built by <a href="https://twitter.com/matsitka" target="_blank">@matsitka</a></p>
+         </div>
+    </div>
+</div>
+
+<script src="{% static "js/lib/modernizr.js" %}"></script>
+
+
+
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>-->
+
+    <script src="{% static "js/lib/responsive-nav.min.js" %}"></script>
+
+<script>
+  //var nav = responsiveNav(".nav-collapse");
+
+  var nav = responsiveNav(".nav-collapse", { // Selector
+  animate: true, // Boolean: Use CSS3 transitions, true or false
+  transition: 284 // Integer: Speed of the transition, in milliseconds
+
+});
+
+
+</script>
+
+
+
+
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.2.18/angular-resource.min.js"></script>-->
+
+{% if request.get_full_path == "/angular/" %}
+
+<script src="{% static "js/lib/angular.min.js" %}"></script>
+<script src="{% static "js/lib/angular-resource.min.js" %}"></script>
+
+<script src="{% static "js/factory.js" %}"></script>
+<script src="{% static "js/app.js" %}"></script>
+
+
+<script>
+// Add the CSRF Token
+var app = angular.module('share.app.resource'); // Not including a list of dependent modules (2nd parameter to `module`) "re-opens" the module for additional configuration
+app.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.defaults.headers.common['X-CSRFToken'] = '{{ csrf_token|escapejs }}';
+}]);
+</script>
+
+{% endif %}
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js"></script>-->
+
+
+     <script>
+        $(document).ready(function(){
+           // $('input[name=url]').focus();
+
+            $('.search-id').on('click', function(){
+                $('.profile .search').addClass('show');
+                $('.search input[type=text]').focus();
+
+                $('.search input[type=text]').on('focusout', function(){
+                    $('.profile .search').removeClass('show');
+                })
+
+            })
+
+
+
+
+        })
+    </script>
+
+  </body>
+</html>

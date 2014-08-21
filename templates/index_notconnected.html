@@ -1,0 +1,174 @@
+{% extends 'layout.html' %}
+{% load stats_extra static %}
+
+{% block share %}
+
+<div id="sitka" class="timeline">
+
+
+
+
+
+
+    <div class="row">
+        <div class="columns">
+         <h1 class="center title">Introducing <a href="#"><span>booksitka</span></a>,</h1>
+         <h2 class="center animated fadeInUp">A Smarter Way to Collect and Share Privately on the Web.</h2>
+
+
+            <div class="cbp_tmlabel register">
+
+
+
+                 <div class="beautif">
+                 <form id="user_form" accept-charset="UTF-8" action="{% url "register" %}" class="form-stacked animated fadeInUp"  method="post">
+
+
+
+                  {% csrf_token %}
+
+
+
+                  {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                    {% endfor %}
+
+                    {% for field in form.visible_fields %}
+
+
+                        {{ label_tag }}
+                        {{ label }}
+                        {{ field }}
+
+                    {% endfor %}
+
+
+
+                <input class="btn m-t-12 register" id="user_submit" name="commit" type="submit" value="Register">
+
+
+              {% if form.is_bound and not form.is_valid %}
+                <div class="alert-message block-message error">
+                  <div class="errors">
+                    {% for field in form.visible_fields %}
+                    {% for error in field.errors %}
+                    <p>{{ field.label }}: {{ error }}</p>
+                    {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                  </div>
+                </div>
+                {% endif %}
+
+            </form>
+            </div>
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+<div class="row">
+    <div class="columns">
+
+
+        <div class="statsbox">
+
+
+
+            {% show_stats %}
+
+
+
+        </div>
+<script>
+
+
+function GetWidth()
+  {
+
+          var x = 0;
+          if (self.innerHeight)
+          {
+                  x = self.innerWidth;
+          }
+          else if (document.documentElement && document.documentElement.clientHeight)
+          {
+                  x = document.documentElement.clientWidth;
+          }
+          else if (document.body)
+          {
+                  x = document.body.clientWidth;
+          }
+          return x;
+  }
+
+
+/*
+$(window).resize(function() {
+var widthresize = $(window).width();
+  //var height = $(window).height();
+})*/
+
+//http://bl.ocks.org/mbostock/4060366
+
+var width = GetWidth() - 15,
+    height = 270;
+
+var vertices = d3.range(100).map(function(d) {
+  return [Math.random() * width, Math.random() * height];
+});
+
+var voronoi = d3.geom.voronoi()
+    .clipExtent([[0, 0], [width, height]]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("style", "max-width:100%")
+    .on("mousemove", function() { vertices[0] = d3.mouse(this); redraw(); });
+
+var path = svg.append("g").selectAll("path");
+
+//svg.selectAll("circle")
+//    .data(vertices.slice(1))
+//  .enter().append("circle")
+//    .attr("transform", function(d) { return "translate(" + d + ")"; })
+//    .attr("r", 1.5);
+
+redraw();
+
+function redraw() {
+  path = path
+      .data(voronoi(vertices), polygon);
+
+  path.exit().remove();
+
+  path.enter().append("path")
+      .attr("class", function(d, i) { return "q" + (i % 9) + "-9"; })
+      .attr("d", polygon);
+
+  path.order();
+}
+
+function polygon(d) {
+  return "M" + d.join("L") + "Z";
+}
+
+
+
+</script>
+    </div>
+</div>
+</div>
+
+{% endblock %}

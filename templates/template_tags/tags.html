@@ -1,0 +1,25 @@
+
+{% if tagged_items %}
+    {% for item in tagged_items  %}
+
+    <li><a href="/tag/{{ item.slug }}">#{{ item }} <span>{{ item.tag_count }}</span></a></li>
+
+    {% endfor %}
+
+
+    {% if all_tags.count > 10 %}
+        <p class="left m-t-12"><a href="{% url "all_tags" %}" class="btn nmb" title="View all your tags">. . .</a></p>
+    {% endif %}
+
+
+
+{% else %}
+    <li><a href="{% url "new-link" %}">You don't have any tags, yet.<br>Start by adding a link tag.</a></li>
+{% endif %}
+
+
+
+
+
+
+
