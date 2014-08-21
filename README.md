@@ -1,6 +1,4 @@
-#A fun web bookmark app to help you save and collect things on the web.
-
-##Django App
+##A fun web bookmark app to help you save and collect things on the web - Django App.
 
 ##Demo
 
@@ -32,5 +30,5 @@
 ##Questions/Feedbacks
 
 * hi@matsitka.com
-* https//twitter.com/matsitka
+* https://twitter.com/matsitka
 * http://matsitka.com
