@@ -1,9 +1,28 @@
 ##A fun web bookmark app to help you save and collect things on the web - Django App.
 
+Save a text, link or photo and organize your collection with tags.
+
 ##Demo
 
 * http://booksitka-bubblegum.herokuapp.com/
 * http://booksitka-darkforest.herokuapp.com/
+
+**Theme**
+
+* BubbleGum
+* Darkforest
+
+**Embed links**
+
+* youtube
+* vimeo
+* vine
+* instagram
+
+*Uncomplete (TODO)*
+
+* Angular.js integration to display custom content
+* Highlighted bookmarks
 
 ##Installation
 
